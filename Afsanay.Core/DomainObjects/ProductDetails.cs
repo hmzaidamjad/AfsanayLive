@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Afsanay.Core.DomainObjects
 {
-    public class ProductInfo
+    public class ProductDetails
     {
-        public int ProductInfoId { get; set; }
+        public int ProductDetailsId { get; set; }
         public Size Size { get; set; }
         public string Color { get; set; }
         public int ProductId { get; set; }

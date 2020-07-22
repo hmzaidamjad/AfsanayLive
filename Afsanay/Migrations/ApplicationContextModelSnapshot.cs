@@ -142,9 +142,9 @@ namespace Afsanay.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("Afsanay.Core.DomainObjects.ProductInfo", b =>
+            modelBuilder.Entity("Afsanay.Core.DomainObjects.ProductDetails", b =>
                 {
-                    b.Property<int>("ProductInfoId")
+                    b.Property<int>("ProductDetailsId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -157,11 +157,11 @@ namespace Afsanay.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductInfoId");
+                    b.HasKey("ProductDetailsId");
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductInfo");
+                    b.ToTable("ProductDetails");
                 });
 
             modelBuilder.Entity("Afsanay.Core.DomainObjects.SaleOrder", b =>
@@ -234,7 +234,10 @@ namespace Afsanay.Migrations
                     b.Property<double>("Discount")
                         .HasColumnType("double");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int>("ProductDetailsId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Quantity")
@@ -257,6 +260,8 @@ namespace Afsanay.Migrations
 
                     b.HasKey("SaleOrderDetailsId");
 
+                    b.HasIndex("ProductDetailsId");
+
                     b.HasIndex("ProductId");
 
                     b.HasIndex("SaleOrderId");
@@ -273,7 +278,7 @@ namespace Afsanay.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Afsanay.Core.DomainObjects.ProductInfo", b =>
+            modelBuilder.Entity("Afsanay.Core.DomainObjects.ProductDetails", b =>
                 {
                     b.HasOne("Afsanay.Core.DomainObjects.Product", "Product")
                         .WithMany("ProductInfos")
@@ -299,11 +304,15 @@ namespace Afsanay.Migrations
 
             modelBuilder.Entity("Afsanay.Core.DomainObjects.SaleOrderDetails", b =>
                 {
-                    b.HasOne("Afsanay.Core.DomainObjects.Product", "Product")
-                        .WithMany("SaleOrderDetails")
-                        .HasForeignKey("ProductId")
+                    b.HasOne("Afsanay.Core.DomainObjects.ProductDetails", "ProductDetails")
+                        .WithMany()
+                        .HasForeignKey("ProductDetailsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Afsanay.Core.DomainObjects.Product", null)
+                        .WithMany("SaleOrderDetails")
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("Afsanay.Core.DomainObjects.SaleOrder", "SaleOrder")
                         .WithMany("SaleOrderDetails")

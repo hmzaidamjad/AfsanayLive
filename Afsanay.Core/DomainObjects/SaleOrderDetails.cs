@@ -8,7 +8,7 @@ namespace Afsanay.Core.DomainObjects
     {
         public int SaleOrderDetailsId { get; set; }
         public int SaleOrderId { get; set; }
-        public int ProductId { get; set; }
+        public int ProductDetailsId { get; set; }
         public int Quantity { get; set; }
         public double UnitPrice { get; set; }
         public double UnitCost { get; set; }
@@ -16,7 +16,7 @@ namespace Afsanay.Core.DomainObjects
         public double Discount { get; set; }
         public DateTime Stamp { get; set; }
         public SaleOrder SaleOrder { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual ProductDetails ProductDetails { get; set; }
 
 
 

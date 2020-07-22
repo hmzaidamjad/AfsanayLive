@@ -21,7 +21,7 @@ namespace Afsanay.Core.DomainObjects
         public int CategoryId { get; set; }
        // EF Core Navigational property
         public virtual Category Category { get; set; }
-        public virtual ICollection<ProductInfo> ProductInfos { get; set; }
+        public virtual ICollection<ProductDetails> ProductInfos { get; set; }
         public virtual ICollection<SaleOrderDetails> SaleOrderDetails { get; set; }
 
     }
