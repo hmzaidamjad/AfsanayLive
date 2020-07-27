@@ -23,7 +23,6 @@ const routes: Routes = [ { path: 'product-list', component: ListProductsComponen
 	imports: [
 		BrowserModule,
 		BrowserAnimationsModule,
-		MatCardModule,
 		MatButtonModule,
 		NgbModule,
 		FormsModule,
@@ -32,6 +31,7 @@ const routes: Routes = [ { path: 'product-list', component: ListProductsComponen
 		ExamplesModule,
 		AppRoutingModule,
 		MatSliderModule,
+		MatCardModule,
 		ReactiveFormsModule,
 		RouterModule.forRoot(routes)
 	],
