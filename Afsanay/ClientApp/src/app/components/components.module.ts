@@ -17,6 +17,7 @@ import { NgbdModalContent } from './modal/modal.component';
 import { ImageCardComponent } from 'app/shared/image-card/image-card.component';
 import { MultiProductsCarouselComponent } from 'app/shared/multi-products-carousel/multi-products-carousel.component';
 import { MatCardModule } from '@angular/material/card';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
 const routes: Routes = [ { path: 'product-list', component: ImageCardComponent } ];
 @NgModule({
@@ -28,6 +29,7 @@ const routes: Routes = [ { path: 'product-list', component: ImageCardComponent }
 		RouterModule,
 		JwBootstrapSwitchNg2Module,
 		MatCardModule,
+		MDBBootstrapModule.forRoot(),
 		RouterModule.forChild(routes)
 	],
 	declarations: [

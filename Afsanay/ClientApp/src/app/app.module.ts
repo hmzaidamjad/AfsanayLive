@@ -16,6 +16,8 @@ import { ImageCardComponent } from './shared/image-card/image-card.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { ListProductsComponent } from './shared/list-products/list-products.component';
 
+
+
 const routes: Routes = [ { path: 'product-list', component: ListProductsComponent } ];
 
 @NgModule({
@@ -33,6 +35,7 @@ const routes: Routes = [ { path: 'product-list', component: ListProductsComponen
 		MatSliderModule,
 		MatCardModule,
 		ReactiveFormsModule,
+		
 		RouterModule.forRoot(routes)
 	],
 	providers: [],
